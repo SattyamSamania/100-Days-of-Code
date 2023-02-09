@@ -1,0 +1,56 @@
+/* Default Styling */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+
+body{
+    transition: 2s;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Main Styling  */
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styling */
+
+.container{
+    width: 30rem;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Button Styling  */
+
+button{
+    margin-top: 5px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    
+}
