@@ -1,36 +1,18 @@
-const item = document.querySelector("item");
-const toDoBox = document.querySelector("#to-do-box");
+let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
 
-item.addEventListener(
-    "keyup",
-    function(event) {
-        if(event.key == "Enter"){
-            console.log(this.value)
-            this.value = ""
-        }
-    }
-)
+addToDoButton.addEventListener('click', function(){
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText= inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+    paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = "line-through";
+    })
 
-
-const addToDo = (item) => {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `
-    ${item}
-    <i class="fas fa-times"> </i>
-    `;
-
-    listItem.addEventListener(
-        "click",
-        function(){
-            this.classList.toggle("done");
-        }
-    )
-
-    listItem.querySelector("i").addEventListener(
-        "click",
-        function(){
-            listItem.remove()
-        }
-    )
-    toDoBox.appendChild(listItem)
-}
+    paragraph.addEventListener('dblclick', function(){
+        toDoContainer.removeChild(paragraph);
+    })
+})
